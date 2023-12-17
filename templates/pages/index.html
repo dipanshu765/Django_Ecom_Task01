@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container-fluid" style="background-color: aliceblue">
+    <div class="row mt-2">
+      {% for product in products %}
+        <div class="col-md-3 mb-2">
+            <div class="img-thumbnail">
+                <a href="{% url 'pages:product_page' product.id %}">
+                 <img src="{{ product.image.url }}" class="img-fluid rounded" alt="Responsive Image">
+                </a>
+            </div>
+
+            <div class="page-item"><a href="{% url 'pages:product_page' product.id %}"> {{ product.name }}</a></div>
+            {% if product.brand %}
+             <div class="page-item">{{ product.brand }}</div>
+            {% else %}
+             <div class="page-item">Not Specified</div>
+            {% endif %}
+            <div class="page-item">Rs.{{ product.price }}/-</div>
+
+        </div>
+      {% endfor %}
+    </div>
+
+</div>    
+
+
+{% endblock %}

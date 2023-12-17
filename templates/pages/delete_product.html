@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <div class="container">
+      <div class="layout__box">
+          <div class="layout__boxHeader">
+              <div class="layout__boxTitle">
+                  <h4>Confirmation Required!!!</h4>
+              </div>
+          </div>
+          <div class="layout__body">
+              <form class="form" action="" method="POST">
+                  {% csrf_token %}
+                  <div class="form__group">
+                      <p>Are you sure you want to delete '{{ obj }}'?</p>
+                  </div>
+                  <div class="for__group">
+                      <button type="submit" class="btn btn-danger">Confirm</button>
+                      <a href="{{ request.META.HTTP_REFERER }}" type="submit" class="btn btn-secondary">Cancel</a>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+
+{% endblock %}

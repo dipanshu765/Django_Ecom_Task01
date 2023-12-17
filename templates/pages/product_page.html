@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <h3><b>Product Specifications</b></h3>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <img  style="height: 400px; width: 550px; border-radius: 20px" src="{{ product.image.url }}" alt="responsive-image">
+            </div>
+            <div class="col-md-6">
+              <div class="page-item">
+                  <h3>{{ product.name }}</h3>
+              </div>
+              <div class="page-item">
+                Brand: {{ product.brand }}
+              </div>
+              <div class="page-item">
+                Category: {{ product.category }}
+              </div>
+              <div class="page-item">
+                <h3> Rs.{{ product.price }}/-</h3> <b> Available Quantity: {{ product.quantity }}</b>
+              </div>
+              {% if product.host == request.user %}
+                <a href="{% url 'pages:delete_product' product.id %}">Delete</a> | <a href="{% url 'pages:update_product' product.id %}">Update</a>
+              {% endif %}
+                <br>
+                <br>
+              <div class="text">
+                {{ product.description }}
+              </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+The following is Assessment Details
+
+•	Registration
+1.	Company can register with name, mobile number, email, password and confirm password, etc.
+2.	Validation implemented.
+3.	Data will be stored in database.
+
+•	Login
+1.	Company can login with email and password.
+2.	Validation implemented with JWT token.
+
+•	Add Product
+1.	Company can add Product name, Category, brand, price, quantity and Description
+
+•	View Product
+1.	You can get all product by description, name or brand.
+2.	If brand specified in body, get products based on the brand specified
+
+•	Delete
+1.	Only owner of the product can Delete and update the product
+
+
+Super-user:
+email: dipanshu@email.com
+password:123456
